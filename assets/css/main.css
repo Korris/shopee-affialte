@@ -1,0 +1,74 @@
+/* Font Be Vietnam Pro — hỗ trợ đầy đủ dấu tiếng Việt */
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===== Base ===== */
+@layer base {
+  html {
+    -webkit-tap-highlight-color: transparent;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-mist text-slate-900 antialiased;
+  }
+
+  ::selection {
+    @apply bg-brand-200 text-brand-900;
+  }
+
+  /* Scrollbar mảnh, gọn */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-slate-300 rounded-full;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+}
+
+/* ===== Component classes dùng chung toàn app ===== */
+@layer components {
+  /* --- Card --- */
+  .card {
+    @apply bg-white rounded-2xl ring-1 ring-slate-900/5 shadow-soft;
+  }
+
+  /* --- Buttons --- */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 h-11 px-4 rounded-xl text-sm font-semibold
+      transition-all duration-150 active:scale-[0.97] disabled:opacity-50 disabled:pointer-events-none
+      focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2;
+  }
+  .btn-primary {
+    @apply btn text-white bg-gradient-to-r from-brand-500 to-brand-600 shadow-glow
+      hover:from-brand-400 hover:to-brand-500;
+  }
+  .btn-secondary {
+    @apply btn bg-white text-slate-700 ring-1 ring-slate-200 shadow-sm hover:bg-slate-50 hover:ring-slate-300;
+  }
+
+  /* --- Input --- */
+  .input {
+    @apply w-full h-11 px-4 rounded-xl bg-white ring-1 ring-slate-200 text-sm text-slate-900
+      placeholder:text-slate-400 transition-all
+      focus:outline-none focus:ring-2 focus:ring-brand-500;
+  }
+}
+
+/* ===== Page transition ===== */
+.page-enter-active,
+.page-leave-active {
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(6px);
+}

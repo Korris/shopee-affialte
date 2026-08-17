@@ -1,0 +1,17 @@
+# Nuxt
+.nuxt
+.output
+.data
+dist
+
+# Node
+node_modules
+
+# Env — không commit credentials
+.env
+.env.*
+!.env.example
+
+# Logs & misc
+*.log
+.DS_Store
